@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .index-body {
+                display: grid;
+                min-height: 100vh;
+                margin: 0%;
+                padding: 0%;
+            }
+
+            .encabezado {
+                font-family: Arial, sans-serif;
+                color: white;
+                background-color: #2469A0;
+                display: flex;
+                flex-direction: row;
+                justify-content:space-between;
+                align-items: center;
+            }
+
+            .titulo {
+                color: white;
+                font-size: 30px;
+                font-weight: lighter;
+                padding: 10px;
+                margin-left: 10px;
+            }
+
+            .retBtn {
+                margin-right: 10px;
+            }
+
+            .retBtn:hover {
+                color: #ffffff;
+                background-color: black;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color:#10bce3;
+                min-height: 100%;
+            }
+
+            .pie-de-pagina {
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                text-align: right;
+                background-color: #2469A0;
+                padding-right: 10px;
+                padding-top: 10px;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body class="index-body">
+        <header class="encabezado">
+        <div class="titulo">Calendario</div>
+        <nav class="homebtn">
+            <button class="retBtn">Volver al inicio</button>
+        </nav>
+        </header>
+        <main>
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FArgentina%2FBuenos_Aires&bgcolor=%23badaff&src=Y19mOTA1NjYzNDNhNjRjNmQ4MjY1ZTE0ZTYyNzhhYmFjMDU5YzAwODNiYmE1MDI4MDQyNTFmOTU3Y2ExMmVjNzY5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%233F51B5" style="border:solid 1px #777" width="1200" height="600" frameborder="0" scrolling="no"></iframe>
+        </main>
+        <footer class="pie-de-pagina">
+            <label> © 2024 | PP Consultora S.R.L. </label>
+        </footer>
+    </body>
+</html>

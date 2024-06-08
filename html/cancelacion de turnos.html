@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelación de Turnos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #280eae;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: hsl(240, 13%, 91%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0c0b0b;
+        }
+        p {
+            text-align: center;
+            color: #101010;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            color: #0d0000;
+        }
+        input, select, textarea, button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cancelación de Turnos</h1>
+        <p>Utiliza este formulario para cancelar tus turnos programados.</p>
+        <form id="cancelForm">
+            <label for="identification">Número de Identificación o Correo Electrónico</label>
+            <input type="text" id="identification" name="identification" required>
+
+            <label for="turno">Turno a Cancelar</label>
+            <input type="datetime-local" id="turno" name="turno" required>
+
+            <label for="reason">Razón de la Cancelación (opcional)</label>
+            <textarea id="reason" name="reason" rows="4"></textarea>
+
+            <button type="submit">Cancelar Turno</button>
+        </form>
+        <div class="message" id="confirmationMessage" style="display: none;">
+            Tu turno ha sido cancelado exitosamente.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cancelForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('cancelForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

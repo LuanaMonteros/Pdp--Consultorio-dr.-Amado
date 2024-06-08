@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasignación de Turnos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #280eae;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: hsl(240, 13%, 91%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0c0b0b;
+        }
+        p {
+            text-align: center;
+            color: #101010;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            color: #0d0000;
+        }
+        input, select, textarea, button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reasignación de Turnos</h1>
+        <p>Utiliza este formulario para reasignar tus turnos programados.</p>
+        <form id="reassignForm" action="procesar_reasignacion.php" method="POST">
+            <label for="identification">Número de Identificación o Correo Electrónico</label>
+            <input type="text" id="identification" name="identification" required>
+
+            <label for="fecha_actual">Fecha y Hora del Turno Actual</label>
+            <input type="datetime-local" id="fecha_actual" name="fecha_actual" required>
+
+            <label for="nueva_fecha">Nueva Fecha del Turno</label>
+            <input type="date" id="nueva_fecha" name="nueva_fecha" required>
+
+            <label for="nueva_hora">Nueva Hora del Turno</label>
+            <input type="time" id="nueva_hora" name="nueva_hora" required>
+
+            <label for="motivo">Motivo de la Reasignación (Opcional)</label>
+            <textarea id="motivo" name="motivo" rows="4" ></textarea>
+
+            <button type="submit">Reasignar Turno</button>
+        </form>
+        <div class="message" id="confirmationMessage" style="display: none;">
+            Tu turno ha sido reasignado exitosamente.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('reassignForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Aquí iría el código para enviar los datos al servidor y procesar la reasignación.
+            // Por ejemplo, puedes usar JavaScript para enviar los datos mediante AJAX o Fetch.
+            // Una vez que se haya realizado la reasignación en el servidor, puedes mostrar el mensaje de confirmación.
+            document.getElementById('reassignForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
